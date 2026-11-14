@@ -1,0 +1,23 @@
+{
+  "name": "dsh-ai-records",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AI 访谈档案：把 AI 访谈、圆桌、发布会收成一个可检索、可回听的中英对照资料库。",
+  "keywords": ["dsh", "dsh-plugin", "interview", "podcast", "transcript", "archive"],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "lib/*.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-layout", "@deepseek-ai/dsh-client-ui-sidebar"]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+# dsh-deep-search bundle patch：把「AI 大搜索」挂进 profile。
+# row id 稳定，用户可在自己的 profile patch 中按 id 覆盖 config 或 disable。
+- insert:
+    - id: dsh-deep-search
+      name: 'dsh-deep-search'
+      config:
+        enabled: true
+        # 空字符串 = 默认 ~/Documents/DSH工具数据/AI大搜索
+        rootDir: ''
+        # 每次搜索的问题数上限（4-8）
+        maxQuestions: 6
+        # 每个问题的检索轮数
+        searchesPerQuestion: 3
+        # 每次检索返回条数
+        searchMaxResults: 8
+        # 每个问题最多精读几篇原文（总抓取数另有硬上限）
+        fetchPerQuestion: 8
+        # 抓取总数硬上限；未到上限时按失败率/连续失败/时间动态停
+        maxFetches: 80
+        fetchFailureRate: 0.6
+        fetchMinSamples: 8
+        fetchConsecutiveFailures: 5
+        fetchTimeRatio: 0.55
+        # 单次搜索总时长上限（ms）
+        jobTimeoutMs: 1500000
+        # 面板新建搜索的默认深度：quick | deep
+        defaultDepth: deep
+        # v2：基础/讨论先行的预算（默认值见 lib/config.js）
+        # quickQuestions: 3
+        # maxBasicQueries: 5
+        # maxBasicSources: 10
+        # maxDiscussionIssues: 5
+        # maxDiscussionSources: 12
+        # maxSearches: 48
+        # llmMaxTokens: 12000
+        # reasoningEffort: off

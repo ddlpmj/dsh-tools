@@ -1,0 +1,42 @@
+{
+  "name": "dsh-ai-reader",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "description": "双栏 AI 阅读助手：在 DSH 内打开文章，选中任意文字让 AI 解读与分析。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "reader",
+    "ai",
+    "two-column"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}

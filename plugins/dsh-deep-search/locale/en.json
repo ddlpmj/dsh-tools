@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "title": "Deep Search",
+    "description": "Send your query to the selected search engine and see its titles, links, and snippets in the original order."
+  },
+  "panel": {
+    "label": "Deep Search"
+  }
+}

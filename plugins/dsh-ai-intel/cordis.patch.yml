@@ -1,0 +1,11 @@
+# dsh-ai-intel bundle patch：把 AI 情报台挂进 profile。
+# row id 稳定，可以在自己的 profile patch 里按 id 覆盖 config 或 disable。
+- insert:
+    - id: dsh-ai-intel
+      name: 'dsh-ai-intel'
+      config:
+        libraryDir: ''
+        wechatProviderFile: ''
+        wechatProviderOrigin: ''
+        wechatAllowedFeedOrigins: []
+        wechatSeedArticles: []

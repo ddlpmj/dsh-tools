@@ -1,0 +1,6 @@
+# dsh-ai-reader bundle patch: mount the reading-assistant plugin into the profile.
+# The row id is stable; users may override its config or disable it in their own
+# profile patch by targeting `dsh-ai-reader`.
+- insert:
+    - id: dsh-ai-reader
+      name: 'dsh-ai-reader'

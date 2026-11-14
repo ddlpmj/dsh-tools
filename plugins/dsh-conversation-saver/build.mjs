@@ -1,0 +1,2 @@
+import { build } from 'esbuild';
+await build({entryPoints:['src/client.jsx'],bundle:true,format:'iife',globalName:'ConversationSaverModule',outfile:'client.js',external:['react'],loader:{'.css':'text'},target:'es2022',banner:{js:'/* Generated from src/client.jsx */\nwindow.__ModuleLoader__?.load({id:"dsh-conversation-saver",factory(require){'},footer:{js:'return ConversationSaverModule.default;}});'}});

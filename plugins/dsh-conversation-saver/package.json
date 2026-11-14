@@ -1,0 +1,43 @@
+{
+  "name": "dsh-conversation-saver",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "将 DSH 对话完整或按消息收藏到知识库的 AI 对话分类。",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "locale/*.json",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "DESIGN.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node --check index.js && node --check client.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
